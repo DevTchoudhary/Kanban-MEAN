@@ -1,0 +1,15 @@
+<div class="kanban-board-container">
+    <img src="https://plus.unsplash.com/premium_photo-1676243408149-9d5a0525d6b2?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8aW52aXRlJTIwc2lnbnxlbnwwfHwwfHx8MA%3D%3D"
+     alt="Background Image" class="background-image" />
+    <h2>Invite Collaborators</h2>
+    <form [formGroup]="inviteForm" (ngSubmit)="generateInvite()" class="invite-form">
+        <label for="email">Email:</label>
+        <input id="email" formControlName="email" type="email" placeholder="Enter email address" required>
+        <button type="submit" class="submit-button">Generate Invite Link</button>
+    </form>
+
+    <div *ngIf="inviteLink" class="invite-link">
+        <p>Invite Link: <a [href]="inviteLink" target="_blank">{{ inviteLink }}</a></p>
+        <p class="redirect-info">You will be redirected to the login page shortly.</p>
+    </div>
+</div>

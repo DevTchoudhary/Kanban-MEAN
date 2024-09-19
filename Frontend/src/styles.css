@@ -1,0 +1,15 @@
+/* You can add global styles to this file, and also import other style files */
+body {
+    margin: 0;
+    background-color: #f4f4f4; /* Light background for the main body */
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    margin: 0;
+  }
+  
+  /* Add some padding to the main content to avoid overlap with navbar */
+  main {
+    padding: 2rem;
+  }
+  

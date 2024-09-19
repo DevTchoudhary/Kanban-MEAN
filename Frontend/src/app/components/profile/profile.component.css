@@ -1,0 +1,53 @@
+.profile-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Full viewport height */
+    background-color: #f0f2f5; /* Light background color */
+  }
+  
+  .profile-card {
+    background-color: white; /* Card background */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    padding: 20px; /* Padding inside the card */
+    width: 300px; /* Card width */
+    text-align: center; /* Center text */
+  }
+  
+  .profile-header {
+    margin-bottom: 20px; /* Space between header and bio */
+  }
+  
+  .profile-photo {
+    width: 100px; /* Profile photo size */
+    height: 100px; /* Profile photo size */
+    border-radius: 50%; /* Circular photo */
+    object-fit: cover; /* Cover the area */
+  }
+  
+  .profile-name {
+    font-size: 1.5em; /* Name font size */
+    margin: 10px 0; /* Margin around the name */
+  }
+  
+  .profile-bio {
+    font-size: 1em; /* Bio font size */
+    color: #666; /* Bio text color */
+    margin-bottom: 20px; /* Space between bio and info */
+  }
+  
+  .profile-info h3 {
+    margin: 10px 0; /* Margin for section headings */
+    color: #007bff; /* Heading color */
+  }
+  
+  .profile-info ul {
+    list-style-type: none; /* Remove default list styling */
+    padding: 0; /* Remove padding */
+  }
+  
+  .profile-info li {
+    padding: 5px 0; /* Space between list items */
+  }
+  

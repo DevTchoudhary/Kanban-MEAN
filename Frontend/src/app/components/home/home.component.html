@@ -1,0 +1,84 @@
+<div class="kanban-board">
+  <!-- To Do Column -->
+  <div class="kanban-column">
+    <h3>To Do</h3>
+    <button (click)="addTask(todo)">Add Task</button>
+    <div
+      class="task-container"
+      cdkDropList
+      [cdkDropListData]="todo"
+      [cdkDropListConnectedTo]="['inProgress', 'done', 'col']"
+      (cdkDropListDropped)="drop($event)"
+    >
+      <div *ngFor="let task of todo" cdkDrag class="task-card">
+        <h4>{{ task.title }}</h4>
+        <p>{{ task.description }}</p>
+        <button (click)="editTask(task)">Edit</button>
+        <button (click)="deleteTask(todo, task)">Delete</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- In Progress Column -->
+  <div class="kanban-column">
+    <h3>In Progress</h3>
+    <button (click)="addTask(inProgress)">Add Task</button>
+    <div
+      class="task-container"
+      id="inProgress"
+      cdkDropList
+      [cdkDropListData]="inProgress"
+      [cdkDropListConnectedTo]="['todo', 'done', 'col']"
+      (cdkDropListDropped)="drop($event)"
+    >
+      <div *ngFor="let task of inProgress" cdkDrag class="task-card">
+        <h4>{{ task.title }}</h4>
+        <p>{{ task.description }}</p>
+        <button (click)="editTask(task)">Edit</button>
+        <button (click)="deleteTask(inProgress, task)">Delete</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Done Column -->
+  <div class="kanban-column">
+    <h3>Done</h3>
+    <button (click)="addTask(done)">Add Task</button>
+    <div
+      class="task-container"
+      id="done"
+      cdkDropList
+      [cdkDropListData]="done"
+      [cdkDropListConnectedTo]="['todo', 'inProgress', 'col']"
+      (cdkDropListDropped)="drop($event)"
+    >
+      <div *ngFor="let task of done" cdkDrag class="task-card">
+        <h4>{{ task.title }}</h4>
+        <p>{{ task.description }}</p>
+        <button (click)="editTask(task)">Edit</button>
+        <button (click)="deleteTask(done, task)">Delete</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="kanban-column">
+    <h3>Add Column</h3>
+    <div
+      class="task-container"
+      id="col"
+      cdkDropList
+      [cdkDropListData]="col"
+      [cdkDropListConnectedTo]="['todo', 'inProgress', 'done']"
+      (cdkDropListDropped)="drop($event)"
+    >
+      <button (click)="addColumn()">Add Column</button>
+      <div *ngFor="let task of col" cdkDrag class="task-card">
+        <h4>{{ task.title }}</h4>
+        <p>{{ task.description }}</p>
+
+        <button (click)="editTask(task)">Edit</button>
+        <button (click)="deleteTask(col, task)">Delete</button>
+      </div>
+    </div>
+  </div>
+</div>

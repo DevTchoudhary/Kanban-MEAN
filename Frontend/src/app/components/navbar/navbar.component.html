@@ -1,0 +1,16 @@
+<nav class="navbar">
+    <div class="navbar-container">
+      <h1 class="logo" (click)="navigateTo('/home')">Kanban Dashboard</h1>
+      <div class="menu-icon" (click)="toggleMenu()">
+        <i class="fas fa-bars"></i>
+      </div>
+      <ul class="nav-menu" [class.active]="menuOpen">
+        <li (click)="navigateTo('/home')">Home</li>
+        <li (click)="navigateTo('/kanban-board')">Kanban Board</li>
+        <li (click)="navigateTo('/meetings')">Meetings</li>
+        <li (click)="navigateTo('/profile')">Profile</li>
+        <li (click)="navigateTo('/login')">Login</li>
+      </ul>
+    </div>
+  </nav>
+  

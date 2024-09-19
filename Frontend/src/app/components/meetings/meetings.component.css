@@ -1,0 +1,69 @@
+.meetings-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh; /* Center content vertically */
+    background-size: cover; /* Cover the entire container */
+    background-position: center; /* Center the image */
+    position: relative; /* Position for the overlay */
+    overflow: hidden; /* Hide overflow */
+    background-image: url('https://example.com/your-background-image.jpg'); /* Replace with your image URL */
+  }
+  
+  .blur-overlay {
+    position: absolute; /* Position the overlay */
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5); /* Dark overlay */
+    backdrop-filter: blur(10px); /* Blur effect */
+    z-index: 1; /* Place it below the content */
+  }
+  
+  .title, .description, .meet-button {
+    position: relative; /* Position for the text */
+    z-index: 2; /* Ensure text is above the blur effect */
+    padding: 10px; /* Add some padding for better spacing */
+  }
+  
+  .title {
+    font-size: 2.5em; /* Increase font size */
+    margin-bottom: 10px;
+    color: #ffffff; /* Change text color to white */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Add text shadow */
+  }
+  
+  .description {
+    font-size: 1.5em; /* Increase font size */
+    margin-bottom: 30px;
+    color: #ffffff; /* Light color for better contrast */
+    text-align: center; /* Center text */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Add text shadow */
+    background-color: rgba(0, 0, 0, 0.6); /* Semi-transparent background */
+    border-radius: 5px; /* Rounded corners for the background */
+    padding: 15px; /* Add padding */
+  }
+  
+  .meet-button {
+    background-color: #007bff; /* Bootstrap primary color */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 15px 30px;
+    cursor: pointer;
+    font-size: 18px;
+    transition: background-color 0.3s, transform 0.3s; /* Add transitions */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  }
+  
+  .meet-button:hover {
+    background-color: #0056b3; /* Darker shade on hover */
+    transform: translateY(-2px); /* Raise button on hover */
+  }
+  
+  .meet-button:active {
+    transform: translateY(0); /* Return to original position on click */
+  }
+  

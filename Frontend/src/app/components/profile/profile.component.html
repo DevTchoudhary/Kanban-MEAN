@@ -1,0 +1,35 @@
+<div class="profile-container">
+    <div class="profile-card">
+      <div class="profile-header">
+        <img src="https://plus.unsplash.com/premium_photo-1678565879444-f87c8bd9f241?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NDF8fHNvZnR3YXJlJTIwZW5naW5lZXJ8ZW58MHx8MHx8fDA%3D" 
+        alt="Profile Photo" class="profile-photo">
+        <h2 class="profile-name">{{ name }}</h2>
+      </div>
+      <div class="profile-bio">
+        <p>{{ bio }}</p>
+      </div>
+      <div class="profile-info">
+        <h3>Work Domain</h3>
+        <p>{{ workDomain }}</p>
+        <h3>Professional Skills</h3>
+        <ul>
+          <li *ngFor="let skill of skills">{{ skill }}</li>
+        </ul>
+        <h3>Contact Information</h3>
+        <p>Email: {{ email }}</p>
+        <p>Phone: {{ phone }}</p>
+      </div>
+      <div class="profile-edit">
+        <h3>Edit Profile</h3>
+        <input type="text" [(ngModel)]="name" placeholder="Enter your name">
+        <textarea [(ngModel)]="bio" placeholder="Enter your bio"></textarea>
+        <input type="text" [(ngModel)]="workDomain" placeholder="Enter your work domain">
+        <input type="text" [(ngModel)]="email" placeholder="Enter your email">
+        <input type="text" [(ngModel)]="phone" placeholder="Enter your phone number">
+        <input type="text" [(ngModel)]="newSkill" placeholder="Add a skill">
+        <button (click)="addSkill()">Add Skill</button>
+        <button (click)="saveProfile()">Save</button>
+      </div>
+    </div>
+  </div>
+  

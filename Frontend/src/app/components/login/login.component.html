@@ -1,0 +1,27 @@
+<div class="login-container"> <!-- Login ya register form ka container -->
+  <h2>{{ isNewUser ? 'Register' : 'Login' }}</h2> <!-- Agar isNewUser true hai to 'Register', nahi to 'Login' display hota hai -->
+  
+  <form [formGroup]="loginForm" (ngSubmit)="onSubmit()"> <!-- Form ko loginForm se bind karte hain aur submit event handle karte hain -->
+    
+    <div> <!-- Username input ka container -->
+      <label for="username">Username:</label> <!-- Username input ka label -->
+      <input id="username" formControlName="username" type="text" required> <!-- Username input field, form control se bound -->
+    </div>
+    
+    <div> <!-- Password input ka container -->
+      <label for="password">Password:</label> <!-- Password input ka label -->
+      <input id="password" formControlName="password" type="password" required> <!-- Password input field, form control se bound -->
+    </div>
+    
+    <div *ngIf="isNewUser"> <!-- Agar isNewUser true hai to yeh block display hoga -->
+      <label for="confirmPassword">Confirm Password:</label> <!-- Confirm password input ka label -->
+      <input id="confirmPassword" formControlName="confirmPassword" type="password" required> <!-- Confirm password input field, form control se bound -->
+    </div>
+    
+    <button type="submit">{{ isNewUser ? 'Register' : 'Login' }}</button> <!-- Submit button jo 'Register' ya 'Login' display karta hai -->
+    
+    <button type="button" (click)="toggleUserType()"> <!-- Login aur registration ke beech toggle karne ke liye button -->
+      {{ isNewUser ? 'Already have an account? Login' : 'New user? Register' }} <!-- User type ke hisaab se appropriate message display hota hai -->
+    </button>
+  </form>
+</div>

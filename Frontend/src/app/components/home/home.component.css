@@ -1,0 +1,116 @@
+/* Reset styling for cross-browser consistency */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #ffcccb; /* Baby pink background */
+  padding: 20px;
+}
+
+/* Kanban board layout */
+.kanban-board {
+  display: flex;
+  overflow-x: auto; /* Allow horizontal scrolling if necessary */
+  gap: 20px; /* Space between columns */
+}
+
+/* Styling for each Kanban column */
+.kanban-column {
+  background-color: #f0f0f0; /* Light grey background for columns */
+  padding: 20px;
+  flex: 0 0 auto; /* Prevent columns from growing/shrinking */
+  width: 300px; /* Set a fixed width for each column */
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  min-height: 500px;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Add column section */
+.add-column {
+  display: flex;
+  flex-direction: row; /* Change to row for horizontal layout */
+  flex-wrap: wrap; /* Allow wrapping if necessary */
+  gap: 10px; /* Space between items */
+}
+
+/* Styling for task containers */
+.task-container {
+  background-color: #e0e0e0; /* Grey background for task containers */
+  padding: 10px;
+  border-radius: 8px;
+  flex-grow: 1;
+  overflow-y: auto; /* Allow vertical scrolling for tasks */
+  min-height: 500px; /* Ensure there's enough height for tasks */
+}
+
+/* Styling for individual task cards */
+.task-card {
+  background-color: #ffffff; /* White background for task cards */
+  padding: 15px;
+  margin-bottom: 10px; /* Keep margin for vertical spacing */
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+  transition: transform 0.2s, box-shadow 0.2s;
+  flex: 0 0 auto; /* Default width for task cards */
+}
+
+.task-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.task-card h4 {
+  font-size: 16px;
+  margin-bottom: 8px;
+}
+
+.task-card p {
+  font-size: 14px;
+  color: black; /* Grey text color */
+}
+
+/* Button styling */
+button {
+  background-color: #007bff; /* Blue button background */
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+  margin-right: 8px;
+  transition: background-color 0.3s;
+}
+
+button:hover {
+  background-color: #0056b3; /* Darker blue on hover */
+}
+
+button:focus {
+  outline: none;
+}
+
+.kanban-column button {
+  margin-bottom: 20px;
+  width: 100%;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .kanban-column {
+    width: 45%; /* Adjusted width for medium screens */
+  }
+}
+
+@media (max-width: 768px) {
+  .kanban-column {
+    width: 100%; /* Full width on smaller screens */
+  }
+}
